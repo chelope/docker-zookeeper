@@ -1,0 +1,71 @@
+version: '2'
+services:
+  zookeeper0:
+    image: zookeeper
+    ports:
+    - "2181"
+    environment:
+      SERVICE_NAME: zookeeper
+      CONTAINER_NAME: zk_node_0
+      ZOOKEEPER_SERVER_IDS: zk_node_0:1,zk_node_1:2,zk_node_2:3
+      ZOOKEEPER_INSTANCES: zk_node_0,zk_node_1,zk_node_2
+      ZOOKEEPER_ZK_NODE_0_HOST: zookeeper0
+      ZOOKEEPER_ZK_NODE_0_CLIENT_PORT: 2181
+      ZOOKEEPER_ZK_NODE_0_PEER_PORT: 2888
+      ZOOKEEPER_ZK_NODE_0_LEADER_ELECTION_PORT: 3888
+      ZOOKEEPER_ZK_NODE_1_HOST: zookeeper1
+      ZOOKEEPER_ZK_NODE_1_CLIENT_PORT: 2181
+      ZOOKEEPER_ZK_NODE_1_PEER_PORT: 2888
+      ZOOKEEPER_ZK_NODE_1_LEADER_ELECTION_PORT: 3888
+      ZOOKEEPER_ZK_NODE_2_HOST: zookeeper2
+      ZOOKEEPER_ZK_NODE_2_CLIENT_PORT: 2181
+      ZOOKEEPER_ZK_NODE_2_PEER_PORT: 2888
+      ZOOKEEPER_ZK_NODE_2_LEADER_ELECTION_PORT: 3888
+    volumes:
+      - /var/lib/zookeeper0:/var/lib/zookeeper
+  zookeeper1:
+    image: zookeeper
+    ports:
+    - "2181"
+    environment:
+      SERVICE_NAME: zookeeper
+      CONTAINER_NAME: zk_node_1
+      ZOOKEEPER_SERVER_IDS: zk_node_0:1,zk_node_1:2,zk_node_2:3
+      ZOOKEEPER_INSTANCES: zk_node_0,zk_node_1,zk_node_2
+      ZOOKEEPER_ZK_NODE_0_HOST: zookeeper0
+      ZOOKEEPER_ZK_NODE_0_CLIENT_PORT: 2181
+      ZOOKEEPER_ZK_NODE_0_PEER_PORT: 2888
+      ZOOKEEPER_ZK_NODE_0_LEADER_ELECTION_PORT: 3888
+      ZOOKEEPER_ZK_NODE_1_HOST: zookeeper1
+      ZOOKEEPER_ZK_NODE_1_CLIENT_PORT: 2181
+      ZOOKEEPER_ZK_NODE_1_PEER_PORT: 2888
+      ZOOKEEPER_ZK_NODE_1_LEADER_ELECTION_PORT: 3888
+      ZOOKEEPER_ZK_NODE_2_HOST: zookeeper2
+      ZOOKEEPER_ZK_NODE_2_CLIENT_PORT: 2181
+      ZOOKEEPER_ZK_NODE_2_PEER_PORT: 2888
+      ZOOKEEPER_ZK_NODE_2_LEADER_ELECTION_PORT: 3888
+    volumes:
+      - /var/lib/zookeeper1:/var/lib/zookeeper
+  zookeeper2:
+    image: zookeeper
+    ports:
+    - "2181"
+    environment:
+      SERVICE_NAME: zookeeper
+      CONTAINER_NAME: zk_node_2
+      ZOOKEEPER_SERVER_IDS: zk_node_0:1,zk_node_1:2,zk_node_2:3
+      ZOOKEEPER_INSTANCES: zk_node_0,zk_node_1,zk_node_2
+      ZOOKEEPER_ZK_NODE_0_HOST: zookeeper0
+      ZOOKEEPER_ZK_NODE_0_CLIENT_PORT: 2181
+      ZOOKEEPER_ZK_NODE_0_PEER_PORT: 2888
+      ZOOKEEPER_ZK_NODE_0_LEADER_ELECTION_PORT: 3888
+      ZOOKEEPER_ZK_NODE_1_HOST: zookeeper1
+      ZOOKEEPER_ZK_NODE_1_CLIENT_PORT: 2181
+      ZOOKEEPER_ZK_NODE_1_PEER_PORT: 2888
+      ZOOKEEPER_ZK_NODE_1_LEADER_ELECTION_PORT: 3888
+      ZOOKEEPER_ZK_NODE_2_HOST: zookeeper2
+      ZOOKEEPER_ZK_NODE_2_CLIENT_PORT: 2181
+      ZOOKEEPER_ZK_NODE_2_PEER_PORT: 2888
+      ZOOKEEPER_ZK_NODE_2_LEADER_ELECTION_PORT: 3888
+    volumes:
+      - /var/lib/zookeeper2:/var/lib/zookeeper
